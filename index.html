@@ -1,0 +1,1462 @@
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Don't Forget Dalits — Case Archive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #eae6db;
+    --paper-raised: #f5f2e9;
+    --ink: #1c1c22;
+    --ink-soft: #5b5c6b;
+    --indigo: #1d3a6e;
+    --indigo-tint: #dde5f2;
+    --azure: #2f5fc4;
+    --amber: #a1650f;
+    --amber-tint: #f1e2c8;
+    --rust: #9c3f2e;
+    --rust-tint: #f1dcd6;
+    --sage: #3f6b4a;
+    --sage-tint: #dde8de;
+    --slate-tint: #e3e2da;
+    --line: #cfc9b8;
+    --focus: #2f5fc4;
+    --shadow: 0 8px 30px rgba(28,28,34,0.14);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #15161c;
+      --paper-raised: #1d1f28;
+      --ink: #ece9e0;
+      --ink-soft: #a3a2b3;
+      --indigo: #8ea9dd;
+      --indigo-tint: #22314e;
+      --azure: #7fa2ec;
+      --amber: #dba758;
+      --amber-tint: #3a2f1c;
+      --rust: #e08a76;
+      --rust-tint: #3a2420;
+      --sage: #8ec49b;
+      --sage-tint: #223126;
+      --slate-tint: #262835;
+      --line: #34364a;
+      --shadow: 0 8px 30px rgba(0,0,0,0.5);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #15161c;
+    --paper-raised: #1d1f28;
+    --ink: #ece9e0;
+    --ink-soft: #a3a2b3;
+    --indigo: #8ea9dd;
+    --indigo-tint: #22314e;
+    --azure: #7fa2ec;
+    --amber: #dba758;
+    --amber-tint: #3a2f1c;
+    --rust: #e08a76;
+    --rust-tint: #3a2420;
+    --sage: #8ec49b;
+    --sage-tint: #223126;
+    --slate-tint: #262835;
+    --line: #34364a;
+    --shadow: 0 8px 30px rgba(0,0,0,0.5);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+  .mono { font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace; }
+  a { color: var(--azure); }
+  button { font-family: inherit; cursor: pointer; }
+  input, select, textarea { font-family: inherit; font-size: 14px; color: var(--ink); }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+  #app { max-width: 880px; margin: 0 auto; padding: 28px 20px 80px; }
+
+  /* ---------- Masthead ---------- */
+  .masthead { padding-bottom: 20px; border-bottom: 1px solid var(--line); margin-bottom: 22px; }
+  .masthead-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+  .masthead h1 {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-weight: 700;
+    font-size: 32px;
+    letter-spacing: -0.01em;
+    margin: 0 0 6px;
+    color: var(--indigo);
+  }
+  .tagline { max-width: 62ch; color: var(--ink-soft); margin: 0; font-size: 14.5px; }
+
+  .btn-primary {
+    background: var(--indigo);
+    color: var(--paper-raised);
+    border: none;
+    border-radius: 3px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: opacity 0.15s ease;
+  }
+  .btn-primary:hover { opacity: 0.88; }
+  .btn-secondary {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 9px 14px;
+    font-size: 14px;
+  }
+  .btn-secondary:hover { background: var(--slate-tint); }
+  .btn-text {
+    background: none; border: none; color: var(--ink-soft);
+    font-size: 13px; padding: 4px 0; text-decoration: underline;
+  }
+  .btn-text.danger { color: var(--rust); }
+
+  .stats-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 26px;
+    margin-top: 18px;
+  }
+  .stat { display: flex; flex-direction: column; gap: 2px; }
+  .stat-value { font-family: "IBM Plex Mono", monospace; font-size: 19px; font-weight: 500; color: var(--ink); }
+  .stat-label { font-size: 12px; color: var(--ink-soft); }
+
+  /* ---------- Toolbar ---------- */
+  .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+    align-items: center;
+  }
+  .toolbar input[type="search"] {
+    flex: 1 1 220px;
+    min-width: 160px;
+    padding: 9px 12px;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    background: var(--paper-raised);
+  }
+  .toolbar select {
+    padding: 9px 10px;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    background: var(--paper-raised);
+    color: var(--ink);
+  }
+  .toolbar .spacer { flex: 1 1 auto; min-width: 0; }
+  @media (max-width: 640px) {
+    .toolbar .spacer { display: none; }
+  }
+
+  .team-access-row { margin: -8px 0 14px; text-align: right; }
+  .team-access-row .btn-text { font-size: 12px; }
+
+  /* ---------- Case list ---------- */
+  .case-list { border-top: 1px solid var(--line); }
+  .case-row {
+    border-bottom: 1px solid var(--line);
+  }
+  .case-row summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 14px 4px;
+    display: grid;
+    grid-template-columns: 92px 150px 1fr auto 18px;
+    gap: 14px;
+    align-items: center;
+  }
+  .case-row summary::-webkit-details-marker { display: none; }
+  .case-row summary:hover { background: var(--slate-tint); }
+  .case-row[open] summary { background: var(--slate-tint); }
+  .case-date { font-family: "IBM Plex Mono", monospace; font-size: 12.5px; color: var(--ink-soft); }
+  .case-state { font-size: 13px; color: var(--ink-soft); }
+  .case-title-cell { min-width: 0; }
+  .case-title { font-weight: 500; }
+  .case-category { display: block; font-size: 12.5px; color: var(--ink-soft); margin-top: 1px; }
+  .case-date-sub { display: block; font-size: 11.5px; color: var(--ink-soft); margin-top: 1px; }
+  .chevron { transition: transform 0.15s ease; color: var(--ink-soft); justify-self: end; }
+  .case-row[open] .chevron { transform: rotate(180deg); }
+  @media (prefers-reduced-motion: reduce) { .chevron { transition: none; } }
+
+  .status-col {
+    display: flex; flex-direction: column; align-items: flex-end; gap: 4px;
+    justify-self: end;
+  }
+  .status-badge {
+    font-size: 11.5px;
+    font-weight: 500;
+    padding: 3px 9px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .row-edit-btn {
+    background: none; border: none; padding: 0; cursor: pointer;
+    font-size: 11.5px; color: var(--azure); text-decoration: underline;
+  }
+  .status-reported { background: var(--slate-tint); color: var(--ink-soft); }
+  .status-verified { background: var(--indigo-tint); color: var(--indigo); }
+  .status-ongoing { background: var(--amber-tint); color: var(--amber); }
+  .status-resolved { background: var(--sage-tint); color: var(--sage); }
+
+  .case-detail { padding: 4px 4px 20px 106px; }
+  .case-detail p.summary-text { margin: 0 0 14px; max-width: 68ch; }
+  .detail-block { margin-bottom: 12px; }
+  .detail-block h4 {
+    font-size: 11px; text-transform: none; letter-spacing: 0.02em;
+    color: var(--ink-soft); margin: 0 0 5px; font-weight: 500;
+  }
+  .source-link { display: block; font-size: 13.5px; margin-bottom: 3px; }
+  .source-link .domain { color: var(--ink-soft); font-size: 12px; }
+  .tag-chip {
+    display: inline-block; font-size: 12px; padding: 2px 9px;
+    border: 1px solid var(--line); border-radius: 999px; margin: 0 6px 6px 0; color: var(--ink-soft);
+  }
+  .meta-line { font-size: 12.5px; color: var(--ink-soft); }
+  .row-actions { margin-top: 10px; display: flex; gap: 16px; }
+
+  .empty-state {
+    padding: 60px 20px; text-align: center; color: var(--ink-soft);
+  }
+  .empty-state strong { display: block; color: var(--ink); font-size: 16px; margin-bottom: 6px; font-weight: 500; }
+
+  .case-row.flash-highlight summary {
+    animation: flashHighlight 2.4s ease-out;
+  }
+  @keyframes flashHighlight {
+    0% { background: var(--indigo-tint); }
+    100% { background: transparent; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .case-row.flash-highlight summary { animation: none; background: var(--indigo-tint); }
+  }
+
+  /* ---------- Form panel ---------- */
+  .scrim {
+    position: fixed; inset: 0; background: rgba(20,20,26,0.4); z-index: 40;
+  }
+  .confirm-modal {
+    position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    background: var(--paper-raised); border-radius: 6px; box-shadow: var(--shadow);
+    padding: 22px 24px; max-width: 380px; width: calc(100% - 40px); z-index: 42;
+  }
+  .confirm-modal h3 {
+    font-family: "Source Serif 4", serif; font-size: 18px; margin: 0 0 10px; color: var(--indigo);
+  }
+  .confirm-modal p { margin: 0 0 18px; font-size: 13.5px; color: var(--ink-soft); }
+  .confirm-modal-actions { display: flex; justify-content: flex-end; gap: 10px; }
+  .form-panel {
+    position: fixed; top: 0; right: 0; height: 100%; width: min(480px, 100%);
+    background: var(--paper-raised); z-index: 41; box-shadow: var(--shadow);
+    display: flex; flex-direction: column;
+    transform: translateX(0);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .form-panel { transition: transform 0.22s ease; }
+  }
+  .form-panel-head {
+    padding: 20px 22px 14px; border-bottom: 1px solid var(--line);
+    display: flex; justify-content: space-between; align-items: flex-start; gap: 12px;
+  }
+  .form-panel-head h2 {
+    font-family: "Source Serif 4", serif; font-size: 20px; margin: 0 0 6px; color: var(--indigo);
+  }
+  .form-panel-head p { margin: 0; font-size: 12.5px; color: var(--ink-soft); max-width: 40ch; }
+  .form-close { background: none; border: none; font-size: 18px; color: var(--ink-soft); line-height: 1; padding: 4px; }
+  .form-body { padding: 18px 22px; overflow-y: auto; flex: 1 1 auto; }
+  .form-foot { padding: 14px 22px; border-top: 1px solid var(--line); display: flex; gap: 10px; justify-content: flex-end; }
+
+  .field { margin-bottom: 16px; }
+  .field label { display: block; font-size: 12.5px; font-weight: 500; margin-bottom: 5px; }
+  .field .hint { display: block; font-size: 11.5px; color: var(--ink-soft); font-weight: 400; margin-top: 3px; }
+  .field input[type="text"], .field input[type="url"], .field select, .field textarea {
+    width: 100%; padding: 9px 10px; border: 1px solid var(--line); border-radius: 3px;
+    background: var(--paper); color: var(--ink);
+  }
+  .field textarea { resize: vertical; min-height: 76px; }
+  .field-row { display: flex; gap: 10px; }
+  .field-row > .field { flex: 1; min-width: 0; }
+  .field.invalid input, .field.invalid select, .field.invalid textarea { border-color: var(--rust); }
+  .field-error { color: var(--rust); font-size: 12px; margin-top: 4px; }
+
+  .source-row { display: flex; gap: 8px; margin-bottom: 8px; }
+  .source-row input { flex: 1; }
+  .source-row .remove-source { background: none; border: 1px solid var(--line); border-radius: 3px; color: var(--ink-soft); padding: 0 10px; }
+  .add-source-btn { font-size: 13px; color: var(--azure); background: none; border: none; padding: 2px 0; }
+
+  .perp-entry {
+    border: 1px solid var(--line); border-radius: 5px; padding: 12px 12px 2px;
+    margin-bottom: 10px; background: var(--paper);
+  }
+  .perp-entry .field-row:last-of-type { margin-bottom: 4px; }
+  .remove-perp { font-size: 12px; color: var(--rust); background: none; border: none; padding: 0 0 10px; }
+
+  .form-note {
+    background: var(--slate-tint); border-radius: 4px; padding: 10px 12px;
+    font-size: 12.5px; color: var(--ink-soft); margin-bottom: 18px;
+  }
+
+  .section-heading {
+    font-size: 13px; font-weight: 600; margin: 22px 0 4px;
+    padding-top: 16px; border-top: 1px solid var(--line);
+  }
+  .section-sub { font-size: 12px; color: var(--ink-soft); margin: 0 0 12px; }
+
+  .victim-detail-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4px 18px;
+    font-size: 13.5px; margin-bottom: 4px;
+  }
+  .victim-detail-grid div span.dl { display: block; font-size: 11px; color: var(--ink-soft); }
+
+  .banner {
+    background: var(--rust-tint); color: var(--rust); padding: 12px 16px;
+    border-radius: 4px; font-size: 13.5px; margin-bottom: 18px;
+  }
+  .loading-state { padding: 40px 4px; color: var(--ink-soft); font-size: 14px; }
+
+  footer.app-footer {
+    margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line);
+    font-size: 12px; color: var(--ink-soft);
+  }
+
+  [hidden] { display: none !important; }
+
+  @media (max-width: 620px) {
+    .case-row summary { grid-template-columns: 1fr auto 18px; }
+    .case-date, .case-state { display: none; }
+    .case-detail { padding-left: 4px; }
+    .masthead-top { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+<div id="app">
+
+  <header class="masthead">
+    <div class="masthead-top">
+      <div>
+        <h1>Don't Forget Dalits</h1>
+        <p class="tagline">A shared, researched record of caste-based discrimination against Dalit communities — compiled from news reports, NGO documentation, and public records, not first-hand accounts.</p>
+      </div>
+      <button class="btn-primary" id="newCaseBtn" hidden>+ New case</button>
+    </div>
+    <div class="stats-strip" id="statsStrip"></div>
+  </header>
+
+  <div id="banner" class="banner" hidden=""></div>
+
+  <div class="toolbar">
+    <input type="search" id="searchInput" placeholder="Search title, summary, place, tags…">
+    <select id="filterState"><option value="">All provinces</option></select>
+    <select id="filterCategory"><option value="">All incident types</option></select>
+    <select id="filterStatus"><option value="">All statuses</option></select>
+    <select id="sortSelect">
+      <option value="incident_desc">Incident date, newest</option>
+      <option value="incident_asc">Incident date, oldest</option>
+      <option value="added_desc">Recently documented</option>
+      <option value="state_asc">State, A–Z</option>
+    </select>
+    <span class="spacer"></span>
+    <button class="btn-secondary" id="refreshBtn" title="Reload to see changes from other viewers">Refresh</button>
+    <button class="btn-secondary" id="exportBtn">Export CSV</button>
+  </div>
+
+  <div class="team-access-row">
+    <button type="button" class="btn-text" id="teamAccessBtn">Team access</button>
+  </div>
+
+  <main class="case-list" id="caseList">
+    <div class="loading-state">Loading cases…</div>
+  </main>
+
+  <footer class="app-footer">
+    Shared with everyone who has access to the connected Google Sheet. Include only what a cited source supports — leave out details a source doesn't confirm.
+  </footer>
+</div>
+
+<div id="scrim" class="scrim" hidden=""></div>
+<div id="confirmModal" class="confirm-modal" hidden="" role="alertdialog" aria-modal="true" aria-labelledby="confirmModalTitle">
+  <h3 id="confirmModalTitle">Before you start</h3>
+  <p>Please make sure everything you enter is accurate and matches your source — this becomes part of a shared record.</p>
+  <div class="confirm-modal-actions">
+    <button class="btn-secondary" id="confirmCancelBtn">Cancel</button>
+    <button class="btn-primary" id="confirmContinueBtn">Continue</button>
+  </div>
+</div>
+<div id="sourceAlertModal" class="confirm-modal" hidden="" role="alertdialog" aria-modal="true" aria-labelledby="sourceAlertTitle" style="z-index:43;">
+  <h3 id="sourceAlertTitle">Source required</h3>
+  <p>The source section is required, please ensure the case is supported by evidence.</p>
+  <div class="confirm-modal-actions">
+    <button class="btn-primary" id="sourceAlertOkBtn">OK</button>
+  </div>
+</div>
+<div id="teamLoginModal" class="confirm-modal" hidden="" role="dialog" aria-modal="true" aria-labelledby="teamLoginTitle" style="z-index:43;">
+  <h3 id="teamLoginTitle">Team access</h3>
+  <p id="teamLoginBody">Enter the team access code to add, edit, or delete cases. Browsing and searching never needs this.</p>
+  <div class="field" id="field-team-code" style="margin-bottom:14px;">
+    <input type="password" id="teamCodeInput" placeholder="Access code" autocomplete="off">
+  </div>
+  <div class="confirm-modal-actions">
+    <button class="btn-secondary" id="teamLoginCancelBtn">Cancel</button>
+    <button class="btn-primary" id="teamLoginSubmitBtn">Unlock editing</button>
+  </div>
+</div>
+<aside id="formPanel" class="form-panel" hidden="" role="dialog" aria-modal="true" aria-labelledby="formTitle">
+  <div class="form-panel-head">
+    <div>
+      <h2 id="formTitle">New case</h2>
+      <p>Record a case you found through research — always link where it came from.</p>
+    </div>
+    <button class="form-close" id="formCloseBtn" aria-label="Close">✕</button>
+  </div>
+  <div class="form-body" id="formBody">
+    <div class="form-note">Use only what your source states. Names and details should match the public reporting — don't add specifics a source doesn't confirm.</div>
+    <form id="caseForm">
+      <div class="field" id="field-title">
+        <label for="f-title">Case title</label>
+        <input type="text" id="f-title" placeholder="e.g. Land allotment denied to Dalit families in Rukum village">
+      </div>
+
+      <div class="section-heading" style="border-top:none; padding-top:0; margin-top:18px;">Victim details</div>
+      <p class="section-sub">Optional — include only what your source states. Visible to everyone with access to this archive.</p>
+
+      <div class="field-row">
+        <div class="field" id="field-v-name">
+          <label for="f-v-name">Full name</label>
+          <input type="text" id="f-v-name" placeholder="As given in the source">
+        </div>
+        <div class="field" id="field-v-gender">
+          <label for="f-v-gender">Gender</label>
+          <select id="f-v-gender">
+            <option value="">Not specified</option>
+            <option value="Woman">Woman</option>
+            <option value="Man">Man</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field" id="field-v-dob-bs">
+          <label for="f-v-dob-bs">Date of birth (Nepali / BS)</label>
+          <input type="text" id="f-v-dob-bs" placeholder="e.g. 1 Baisakh 2080, or leave blank">
+        </div>
+        <div class="field" id="field-v-dob">
+          <label for="f-v-dob">Date of birth (Gregorian)</label>
+          <input type="text" id="f-v-dob" placeholder="e.g. 1 January 2000, or leave blank">
+        </div>
+      </div>
+
+      <div class="field" id="field-v-caste">
+        <label for="f-v-caste">Caste / community</label>
+        <input type="text" id="f-v-caste" placeholder="As named in the source">
+      </div>
+
+      <div class="field-row">
+        <div class="field" id="field-v-dod-bs">
+          <label for="f-v-dod-bs">Date of death (Nepali / BS) <span class="hint" style="display:inline">(if applicable)</span></label>
+          <input type="text" id="f-v-dod-bs" placeholder="e.g. 1 Baisakh 2080, or leave blank">
+        </div>
+        <div class="field" id="field-v-dod">
+          <label for="f-v-dod">Date of death (Gregorian) <span class="hint" style="display:inline">(if applicable)</span></label>
+          <input type="text" id="f-v-dod" placeholder="e.g. 1 January 2000, or leave blank">
+        </div>
+      </div>
+
+      <div class="field" id="field-v-age-death">
+        <label for="f-v-age-death">Age at death <span class="hint" style="display:inline">(if applicable)</span></label>
+        <input type="text" id="f-v-age-death" placeholder="e.g. 34">
+      </div>
+
+      <div class="field" id="field-v-origin">
+        <label for="f-v-origin">Location of origin</label>
+        <input type="text" id="f-v-origin" placeholder="Native village or town, if different from where the incident happened">
+      </div>
+
+      <div class="field" id="field-v-moreinfo">
+        <label for="f-v-moreinfo">More information <span class="hint" style="display:inline">(optional)</span></label>
+        <textarea id="f-v-moreinfo" placeholder="Anything else about the victim worth recording"></textarea>
+      </div>
+
+      <div class="section-heading">Incident</div>
+      <p class="section-sub">What happened, when, where, and what kind of case it is.</p>
+
+      <div class="field-row">
+        <div class="field" id="field-date-bs">
+          <label for="f-date-bs">Date of incident (Nepali / BS)</label>
+          <input type="text" id="f-date-bs" placeholder="e.g. 1 Baisakh 2080">
+        </div>
+        <div class="field" id="field-date">
+          <label for="f-date">Date of incident (Gregorian)</label>
+          <input type="text" id="f-date" placeholder="e.g. 1 January 2000, or 'circa 2023'">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field" id="field-time">
+          <label for="f-time">Time of incident <span class="hint" style="display:inline">(optional)</span></label>
+          <input type="text" id="f-time" placeholder="e.g. 14:30, or 'evening'">
+        </div>
+        <div class="field" id="field-category">
+          <label for="f-category">Incident type</label>
+          <select id="f-category"></select>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field" id="field-state">
+          <label for="f-state">Location of incident — Province</label>
+          <select id="f-state"></select>
+        </div>
+        <div class="field" id="field-district">
+          <label for="f-district">District / municipality <span class="hint" style="display:inline">(optional)</span></label>
+          <input type="text" id="f-district" placeholder="e.g. Rukum West">
+        </div>
+      </div>
+
+      <div class="field" id="field-location-detail">
+        <label for="f-location-detail">Specific location <span class="hint" style="display:inline">(optional)</span></label>
+        <input type="text" id="f-location-detail" placeholder="Ward, tole, village, street, or landmark, as reported">
+      </div>
+
+      <div class="field" id="field-summary">
+        <label for="f-summary">Description</label>
+        <textarea id="f-summary" placeholder="What happened, according to the source(s)."></textarea>
+      </div>
+
+      <div class="field" id="field-status">
+        <label for="f-status">Status</label>
+        <select id="f-status">
+          <option value="Reported">Reported</option>
+          <option value="Verified">Verified</option>
+          <option value="Ongoing">Ongoing</option>
+          <option value="Resolved">Resolved</option>
+        </select>
+      </div>
+
+      <div class="field" id="field-tags">
+        <label for="f-tags">Tags <span class="hint" style="display:inline">(comma-separated, optional)</span></label>
+        <input type="text" id="f-tags" placeholder="e.g. land rights, ward, caste-based discrimination act">
+      </div>
+
+      <div class="field" id="field-documentedby">
+        <label for="f-documentedby">Documented by <span class="hint" style="display:inline">(optional)</span></label>
+        <input type="text" id="f-documentedby" placeholder="Your name or initials">
+      </div>
+
+      <div class="field" id="field-i-moreinfo">
+        <label for="f-i-moreinfo">More information <span class="hint" style="display:inline">(optional)</span></label>
+        <textarea id="f-i-moreinfo" placeholder="Anything else about the incident worth recording"></textarea>
+      </div>
+
+      <div class="section-heading">Perpetrator</div>
+      <p class="section-sub">Optional — include only what your source states. Add more than one if the source names several.</p>
+
+      <div id="perpsRows"></div>
+      <button type="button" class="add-source-btn" id="addPerpBtn">+ Add another perpetrator</button>
+
+      <div class="field" id="field-p-moreinfo" style="margin-top:16px;">
+        <label for="f-p-moreinfo">More information <span class="hint" style="display:inline">(optional)</span></label>
+        <textarea id="f-p-moreinfo" placeholder="Anything else about the perpetrator(s) worth recording"></textarea>
+      </div>
+
+      <div class="section-heading">Legal status</div>
+      <p class="section-sub">Optional — how this case stands with the courts, if it's gone that far.</p>
+
+      <div class="field" id="field-l-casename">
+        <label for="f-l-casename">Case name</label>
+        <input type="text" id="f-l-casename" placeholder="e.g. State vs. Ramesh Kumar, or FIR No. 112/2023">
+      </div>
+
+      <div class="field-row">
+        <div class="field" id="field-l-court">
+          <label for="f-l-court">Court</label>
+          <input type="text" id="f-l-court" placeholder="e.g. District Court, Rukum">
+        </div>
+        <div class="field" id="field-l-verdict">
+          <label for="f-l-verdict">Verdict</label>
+          <input type="text" id="f-l-verdict" placeholder="e.g. Convicted, Pending, Acquitted, FIR not filed">
+        </div>
+      </div>
+
+      <div class="field" id="field-l-moreinfo">
+        <label for="f-l-moreinfo">More information <span class="hint" style="display:inline">(optional)</span></label>
+        <textarea id="f-l-moreinfo" placeholder="Anything else about the legal status worth recording"></textarea>
+      </div>
+
+      <div class="section-heading">Source links</div>
+      <p class="section-sub">At least one link to where you found this — required for every case.</p>
+      <div class="field" id="field-sources">
+        <div id="sourcesRows"></div>
+        <button type="button" class="add-source-btn" id="addSourceBtn">+ Add another source</button>
+      </div>
+
+      <div class="field" id="field-s-moreinfo">
+        <label for="f-s-moreinfo">More information <span class="hint" style="display:inline">(optional)</span></label>
+        <textarea id="f-s-moreinfo" placeholder="Anything else about the sources worth recording"></textarea>
+      </div>
+    </form>
+  </div>
+  <div id="formBanner" class="banner" hidden="" style="margin: 0 22px 12px;"></div>
+  <div class="form-foot">
+    <button class="btn-secondary" id="cancelBtn">Cancel</button>
+    <button class="btn-primary" id="saveBtn">Save case</button>
+  </div>
+</aside>
+
+<script>
+(function () {
+  "use strict";
+
+  // ===== CONFIGURE THIS =====
+  // Paste the Google Apps Script Web App URL here (ends in /exec).
+  // See Code.gs's header comment for how to set that up.
+  var SHEETS_API_URL = "https://script.google.com/macros/s/AKfycbzlomBBx5EiFl0JG_S4c76_e0NM3P-ED_RzRZvFjjkUgKJSd7YHWDXYTvOyOhemrbBG/exec";
+  // ===========================
+
+  var STATES = ["Koshi Province","Madhesh Province","Bagmati Province","Gandaki Province",
+    "Lumbini Province","Karnali Province","Sudurpashchim Province","Not specified"];
+
+  var CATEGORIES = ["Violence or atrocity","Sexual violence","Social boycott or exclusion",
+    "Untouchability practice","Land or property dispute","Denial of temple or public space entry",
+    "Education discrimination","Employment discrimination","Manual scavenging",
+    "Police inaction or custodial abuse","Housing or residential segregation",
+    "Denial of political rights","Other"];
+
+  var STATUSES = ["Reported","Verified","Ongoing","Resolved"];
+
+  var canWrite = true;
+  var isLoading = true;
+  var allCases = [];
+  var editingId = null;
+  var lastFocused = null;
+
+  var els = {};
+
+  function $(id) { return document.getElementById(id); }
+
+  function showBanner(msg) {
+    els.banner.hidden = false;
+    els.banner.textContent = msg;
+    if (els.formBanner) {
+      els.formBanner.hidden = false;
+      els.formBanner.textContent = msg;
+    }
+  }
+
+  function hideFormBanner() {
+    if (els.formBanner) els.formBanner.hidden = true;
+  }
+
+  function escapeHtml(str) {
+    return String(str == null ? "" : str).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  function populateSelect(select, options, placeholder) {
+    options.forEach(function (opt) {
+      var o = document.createElement("option");
+      o.value = opt; o.textContent = opt;
+      select.appendChild(o);
+    });
+  }
+
+  function domainOf(url) {
+    try { return new URL(url).hostname.replace(/^www\./, ""); }
+    catch (e) { return url; }
+  }
+
+  function parseDateForSort(str) {
+    if (!str) return -Infinity;
+    var s = String(str).trim();
+    var dmy = s.match(/^(\d{1,2})-(\d{1,2})-(\d{4})$/);
+    if (dmy) {
+      var t = Date.parse(dmy[3] + "-" + dmy[2].padStart(2, "0") + "-" + dmy[1].padStart(2, "0"));
+      if (!isNaN(t)) return t;
+    }
+    var t2 = Date.parse(s);
+    if (!isNaN(t2)) return t2;
+    var m = s.match(/(19|20)\d{2}/);
+    if (m) return Date.parse(m[0] + "-01-01");
+    return -Infinity;
+  }
+
+  function fmtRelative(iso) {
+    if (!iso) return "—";
+    var d = new Date(iso);
+    if (isNaN(d.getTime())) return "—";
+    var diffMs = Date.now() - d.getTime();
+    var days = Math.floor(diffMs / 86400000);
+    if (days <= 0) return "today";
+    if (days === 1) return "1 day ago";
+    if (days < 30) return days + " days ago";
+    return d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+  }
+
+  // ---------- Init ----------
+  function init() {
+    els.statsStrip = $("statsStrip");
+    els.banner = $("banner");
+    els.formBanner = $("formBanner");
+    els.caseList = $("caseList");
+    els.searchInput = $("searchInput");
+    els.filterState = $("filterState");
+    els.filterCategory = $("filterCategory");
+    els.filterStatus = $("filterStatus");
+    els.sortSelect = $("sortSelect");
+    els.exportBtn = $("exportBtn");
+    els.refreshBtn = $("refreshBtn");
+    els.newCaseBtn = $("newCaseBtn");
+    els.scrim = $("scrim");
+    els.formPanel = $("formPanel");
+    els.formCloseBtn = $("formCloseBtn");
+    els.cancelBtn = $("cancelBtn");
+    els.saveBtn = $("saveBtn");
+    els.sourcesRows = $("sourcesRows");
+    els.addSourceBtn = $("addSourceBtn");
+    els.perpsRows = $("perpsRows");
+    els.addPerpBtn = $("addPerpBtn");
+    els.formTitle = $("formTitle");
+    els.confirmModal = $("confirmModal");
+    els.confirmCancelBtn = $("confirmCancelBtn");
+    els.confirmContinueBtn = $("confirmContinueBtn");
+    els.sourceAlertModal = $("sourceAlertModal");
+    els.sourceAlertOkBtn = $("sourceAlertOkBtn");
+    els.teamAccessBtn = $("teamAccessBtn");
+    els.teamLoginModal = $("teamLoginModal");
+    els.teamLoginBody = $("teamLoginBody");
+    els.teamCodeInput = $("teamCodeInput");
+    els.teamLoginCancelBtn = $("teamLoginCancelBtn");
+    els.teamLoginSubmitBtn = $("teamLoginSubmitBtn");
+
+    populateSelect(els.filterState, STATES);
+    populateSelect(els.filterCategory, CATEGORIES);
+    populateSelect(els.filterStatus, STATUSES);
+    populateSelect($("f-state"), STATES);
+    populateSelect($("f-category"), CATEGORIES);
+
+    els.searchInput.addEventListener("input", render);
+    els.filterState.addEventListener("change", render);
+    els.filterCategory.addEventListener("change", render);
+    els.filterStatus.addEventListener("change", render);
+    els.sortSelect.addEventListener("change", render);
+    els.exportBtn.addEventListener("click", exportCsv);
+    els.refreshBtn.addEventListener("click", function () { loadCases(); });
+    els.newCaseBtn.addEventListener("click", openConfirmModal);
+    els.confirmCancelBtn.addEventListener("click", closeConfirmModal);
+    els.confirmContinueBtn.addEventListener("click", function () {
+      closeConfirmModal();
+      openForm(null);
+    });
+    els.sourceAlertOkBtn.addEventListener("click", closeSourceAlert);
+    els.teamAccessBtn.addEventListener("click", function () {
+      if (hasTeamAccess()) {
+        setTeamSecret("");
+        updateTeamAccessUI();
+      } else {
+        openTeamLoginModal();
+      }
+    });
+    els.teamLoginCancelBtn.addEventListener("click", closeTeamLoginModal);
+    els.teamLoginSubmitBtn.addEventListener("click", submitTeamLogin);
+    els.teamCodeInput.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") submitTeamLogin();
+    });
+    els.formCloseBtn.addEventListener("click", closeForm);
+    els.cancelBtn.addEventListener("click", closeForm);
+    els.scrim.addEventListener("click", function () {
+      if (!els.confirmModal.hidden) closeConfirmModal();
+      else if (!els.sourceAlertModal.hidden) closeSourceAlert();
+      else if (!els.teamLoginModal.hidden) closeTeamLoginModal();
+      else closeForm();
+    });
+    els.saveBtn.addEventListener("click", saveCase);
+    els.addSourceBtn.addEventListener("click", function () { addSourceRow("", ""); });
+    els.addPerpBtn.addEventListener("click", function () { addPerpRow({}); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape") return;
+      if (!els.confirmModal.hidden) closeConfirmModal();
+      else if (!els.sourceAlertModal.hidden) closeSourceAlert();
+      else if (!els.teamLoginModal.hidden) closeTeamLoginModal();
+      else if (!els.formPanel.hidden) closeForm();
+    });
+
+    els.caseList.addEventListener("click", function (e) {
+      var editBtn = e.target.closest("[data-action='edit']");
+      var delBtn = e.target.closest("[data-action='delete']");
+      if (editBtn) {
+        e.preventDefault();
+        var c = allCases.find(function (x) { return x.id === editBtn.dataset.id; });
+        if (c) openForm(c);
+      } else if (delBtn) {
+        e.preventDefault();
+        deleteCase(delBtn.dataset.id);
+      }
+    });
+
+    updateTeamAccessUI();
+    loadCases();
+  }
+
+  function updateTeamAccessUI() {
+    var on = hasTeamAccess();
+    els.teamAccessBtn.textContent = on ? "Team mode on \u2014 log out" : "Team access";
+    els.newCaseBtn.hidden = !on;
+    render();
+  }
+
+  function openTeamLoginModal() {
+    lastFocused = document.activeElement;
+    els.scrim.hidden = false;
+    els.teamLoginModal.hidden = false;
+    els.teamCodeInput.value = "";
+    els.teamCodeInput.focus();
+  }
+
+  function closeTeamLoginModal() {
+    els.scrim.hidden = true;
+    els.teamLoginModal.hidden = true;
+    if (lastFocused && lastFocused.focus) lastFocused.focus();
+  }
+
+  function submitTeamLogin() {
+    var code = els.teamCodeInput.value.trim();
+    if (!code) return;
+    setTeamSecret(code);
+    closeTeamLoginModal();
+    updateTeamAccessUI();
+  }
+
+  function apiConfigured() {
+    return SHEETS_API_URL && SHEETS_API_URL.indexOf("PASTE_YOUR") === -1;
+  }
+
+  async function loadCases() {
+    if (!apiConfigured()) {
+      canWrite = false;
+      isLoading = false;
+      showBanner("This app isn't connected to a Google Sheet yet. Open index.html in a text editor and set SHEETS_API_URL near the top of the script to your Apps Script Web App URL.");
+      els.caseList.innerHTML = '<div class="empty-state"><strong>Not connected</strong>See the banner above for setup steps.</div>';
+      return;
+    }
+    isLoading = true;
+    try {
+      var res = await fetch(SHEETS_API_URL, { method: "GET" });
+      var data = await res.json();
+      if (!data.ok) throw new Error(data.error || "unknown error");
+      allCases = data.cases || [];
+      isLoading = false;
+      render();
+    } catch (e) {
+      isLoading = false;
+      showBanner("Couldn't load cases from the Sheet (" + (e && e.message ? e.message : "network error") +
+        "). Check that the Web App URL is correct and deployed with access set to \"Anyone\".");
+      els.caseList.innerHTML = '<div class="empty-state"><strong>Couldn\u2019t load cases</strong>See the banner above.</div>';
+    }
+  }
+
+  var TEAM_SECRET_KEY = "dfd-team-secret";
+
+  function getTeamSecret() {
+    try { return localStorage.getItem(TEAM_SECRET_KEY) || ""; } catch (e) { return ""; }
+  }
+
+  function setTeamSecret(value) {
+    try {
+      if (value) localStorage.setItem(TEAM_SECRET_KEY, value);
+      else localStorage.removeItem(TEAM_SECRET_KEY);
+    } catch (e) {}
+  }
+
+  function hasTeamAccess() {
+    return !!getTeamSecret();
+  }
+
+  // Apps Script doesn't handle CORS preflight requests, so POST bodies are
+  // sent as text/plain — a "simple request" that skips the preflight —
+  // and parsed as JSON manually on the other end regardless of the header.
+  async function apiPost(payload) {
+    payload.secret = getTeamSecret();
+    var res = await fetch(SHEETS_API_URL, {
+      method: "POST",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(payload)
+    });
+    var data = await res.json();
+    if (!data.ok) throw { code: data.error || "unknown_error", message: data.error || "Request failed" };
+    return data;
+  }
+
+  async function persistCases(action, caseObjOrId) {
+    if (!apiConfigured()) {
+      throw { code: "not_granted", message: "Not connected to a Sheet" };
+    }
+    if (action === "delete") {
+      return apiPost({ action: "delete", id: caseObjOrId });
+    }
+    return apiPost({ action: action, case: caseObjOrId });
+  }
+
+  // ---------- Render ----------
+  function matchesFilters(c) {
+    var q = els.searchInput.value.trim().toLowerCase();
+    if (q) {
+      var hay = [c.title, c.summary, c.state, c.district, c.locationDetail, c.category, (c.tags || []).join(" ")]
+        .join(" ").toLowerCase();
+      if (hay.indexOf(q) === -1) return false;
+    }
+    if (els.filterState.value && c.state !== els.filterState.value) return false;
+    if (els.filterCategory.value && c.category !== els.filterCategory.value) return false;
+    if (els.filterStatus.value && c.status !== els.filterStatus.value) return false;
+    return true;
+  }
+
+  function sortCases(list) {
+    var mode = els.sortSelect.value;
+    var copy = list.slice();
+    if (mode === "incident_asc") {
+      copy.sort(function (a, b) { return parseDateForSort(a.dateOfIncident) - parseDateForSort(b.dateOfIncident); });
+    } else if (mode === "added_desc") {
+      copy.sort(function (a, b) { return new Date(b.createdAt || 0) - new Date(a.createdAt || 0); });
+    } else if (mode === "state_asc") {
+      copy.sort(function (a, b) { return (a.state || "").localeCompare(b.state || ""); });
+    } else {
+      copy.sort(function (a, b) { return parseDateForSort(b.dateOfIncident) - parseDateForSort(a.dateOfIncident); });
+    }
+    return copy;
+  }
+
+  function statusClass(status) {
+    return "status-" + (status || "reported").toLowerCase();
+  }
+
+  var justSavedId = null;
+
+  function render() {
+    var filtered = allCases.filter(matchesFilters);
+    var sorted = sortCases(filtered);
+    renderStats(filtered);
+
+    if (allCases.length === 0) {
+      els.caseList.innerHTML = '<div class="empty-state"><strong>No cases yet</strong>Start documenting researched cases with the "New case" button above.</div>';
+      return;
+    }
+    if (sorted.length === 0) {
+      els.caseList.innerHTML = '<div class="empty-state"><strong>No cases match these filters</strong>Try clearing the search or filters. <button type="button" class="btn-text" id="clearFiltersBtn" style="margin-top:6px;">Clear all filters</button></div>';
+      var clearBtn = $("clearFiltersBtn");
+      if (clearBtn) clearBtn.addEventListener("click", clearAllFilters);
+      return;
+    }
+
+    els.caseList.innerHTML = sorted.map(renderRow).join("");
+
+    if (justSavedId) {
+      var newRow = els.caseList.querySelector('[data-id="' + CSS.escape(justSavedId) + '"]');
+      if (newRow) {
+        newRow.open = true;
+        newRow.classList.add("flash-highlight");
+        newRow.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+      justSavedId = null;
+    }
+  }
+
+  function clearAllFilters() {
+    els.searchInput.value = "";
+    els.filterState.value = "";
+    els.filterCategory.value = "";
+    els.filterStatus.value = "";
+    render();
+  }
+
+  function renderStats(filtered) {
+    var states = new Set(allCases.filter(function (c) { return c.state && c.state !== "Not specified"; }).map(function (c) { return c.state; }));
+    var verified = allCases.filter(function (c) { return c.status === "Verified"; }).length;
+    var lastUpdated = allCases.reduce(function (max, c) {
+      var t = c.updatedAt ? new Date(c.updatedAt).getTime() : 0;
+      return t > max ? t : max;
+    }, 0);
+    els.statsStrip.innerHTML =
+      stat(allCases.length, "cases documented") +
+      stat(states.size, "provinces represented") +
+      stat(verified, "verified") +
+      stat(lastUpdated ? fmtRelative(new Date(lastUpdated).toISOString()) : "—", "last updated");
+  }
+
+  function stat(value, label) {
+    return '<div class="stat"><span class="stat-value mono">' + escapeHtml(value) + '</span><span class="stat-label">' + escapeHtml(label) + '</span></div>';
+  }
+
+  function victimField(label, value) {
+    if (!value) return "";
+    return '<div><span class="dl">' + escapeHtml(label) + '</span>' + escapeHtml(value) + '</div>';
+  }
+
+  function renderRow(c) {
+    var sourcesHtml = (c.sources || []).map(function (s) {
+      var linkText = s.label ?
+        escapeHtml(s.label) + ' <span class="domain">(' + escapeHtml(domainOf(s.url)) + ')</span>' :
+        escapeHtml(domainOf(s.url));
+      return '<a class="source-link" target="_blank" rel="noopener" href="' + escapeHtml(s.url) + '">' + linkText + '</a>';
+    }).join("");
+    var tagsHtml = (c.tags || []).map(function (t) {
+      return '<span class="tag-chip">' + escapeHtml(t) + '</span>';
+    }).join("");
+    var metaBits = [];
+    if (c.documentedBy) metaBits.push("Documented by " + escapeHtml(c.documentedBy));
+    metaBits.push("Added " + fmtRelative(c.createdAt));
+    if (c.district) {
+      var districtLine = escapeHtml(c.district) + ", ";
+    } else {
+      districtLine = "";
+    }
+
+    function moreInfoP(text) {
+      return text ? '<p class="meta-line" style="margin-top:6px;">' + escapeHtml(text) + '</p>' : "";
+    }
+
+    var victimGrid = [
+      victimField("Name", c.victimName),
+      victimField("Gender", c.victimGender),
+      victimField("Date of birth (Nepali/BS)", c.victimDobBS),
+      victimField("Date of birth (Gregorian)", c.victimDob),
+      victimField("Caste / community", c.victimCaste),
+      victimField("Date of death (Nepali/BS)", c.victimDodBS),
+      victimField("Date of death (Gregorian)", c.victimDod),
+      victimField("Age at death", c.victimAgeAtDeath),
+      victimField("Location of origin", c.victimOrigin)
+    ].join("");
+    var victimMoreHtml = moreInfoP(c.victimMoreInfo);
+    var victimHtml = (victimGrid || victimMoreHtml) ?
+      '<div class="detail-block"><h4>Victim details</h4><div class="victim-detail-grid">' + victimGrid + '</div>' + victimMoreHtml + '</div>' : "";
+
+    var perpList = (c.perpetrators && c.perpetrators.length) ? c.perpetrators :
+      (c.perpName || c.perpGender || c.perpCaste || c.perpAffiliation ?
+        [{ name: c.perpName, gender: c.perpGender, caste: c.perpCaste, affiliation: c.perpAffiliation }] : []);
+    var perpBlocks = perpList.map(function (p) {
+      var grid = [
+        victimField("Name", p.name),
+        victimField("Gender", p.gender),
+        victimField("Age", p.age),
+        victimField("Caste / community", p.caste),
+        victimField("Affiliation", p.affiliation)
+      ].join("");
+      return '<div class="victim-detail-grid" style="margin-bottom:10px;">' + grid + '</div>';
+    }).join("");
+    var perpMoreHtml = moreInfoP(c.perpMoreInfo);
+    var perpHtml = (perpBlocks || perpMoreHtml) ?
+      '<div class="detail-block"><h4>Perpetrator' + (perpList.length > 1 ? "s" : "") + '</h4>' + perpBlocks + perpMoreHtml + '</div>' : "";
+
+    var legalGrid = [
+      victimField("Case name", c.legalCaseName),
+      victimField("Court", c.legalCourt),
+      victimField("Verdict", c.legalVerdict)
+    ].join("");
+    var legalMoreHtml = moreInfoP(c.legalMoreInfo);
+    var legalHtml = (legalGrid || legalMoreHtml) ?
+      '<div class="detail-block"><h4>Legal status</h4><div class="victim-detail-grid">' + legalGrid + '</div>' + legalMoreHtml + '</div>' : "";
+
+    var dateTimeGrid = [
+      victimField("Date (Nepali / BS)", c.dateOfIncidentBS),
+      victimField("Time of incident", c.timeOfIncident)
+    ].join("");
+    var dateTimeHtml = dateTimeGrid ?
+      '<div class="detail-block"><h4>Date &amp; time</h4><div class="victim-detail-grid">' + dateTimeGrid + '</div></div>' : "";
+
+    var incidentMoreHtml = c.incidentMoreInfo ?
+      '<div class="detail-block"><h4>More information</h4>' + moreInfoP(c.incidentMoreInfo) + '</div>' : "";
+
+    var sourcesMoreHtml = moreInfoP(c.sourcesMoreInfo);
+
+    var locationLine = [districtLine.replace(/, $/, ""), escapeHtml(c.state || "")].filter(Boolean).join(", ");
+    var locationHtml = (locationLine || c.locationDetail) ?
+      '<div class="detail-block"><h4>Location of incident</h4>' +
+      (locationLine ? '<p class="meta-line">' + locationLine + '</p>' : "") +
+      (c.locationDetail ? '<p class="meta-line">' + escapeHtml(c.locationDetail) + '</p>' : "") +
+      '</div>' : "";
+
+    return (
+      '<details class="case-row" data-id="' + escapeHtml(c.id) + '">' +
+        '<summary>' +
+          '<span class="case-date mono">' + escapeHtml(c.dateOfIncident || "—") + '</span>' +
+          '<span class="case-state">' + escapeHtml(c.state || "—") + '</span>' +
+          '<span class="case-title-cell"><span class="case-title">' + escapeHtml(c.title || "Untitled case") + '</span>' +
+            (c.dateOfIncidentBS ? '<span class="case-date-sub mono">' + escapeHtml(c.dateOfIncidentBS) + '</span>' : "") +
+            (c.dateOfIncident ? '<span class="case-date-sub mono">' + escapeHtml(c.dateOfIncident) + '</span>' : "") +
+          '</span>' +
+          '<span class="status-col">' +
+            '<span class="status-badge ' + statusClass(c.status) + '">' + escapeHtml(c.status || "Reported") + '</span>' +
+            (hasTeamAccess() ? '<button type="button" class="row-edit-btn" data-action="edit" data-id="' + escapeHtml(c.id) + '">Edit</button>' : "") +
+          '</span>' +
+          '<span class="chevron">⌄</span>' +
+        '</summary>' +
+        '<div class="case-detail">' +
+          '<p class="summary-text">' + escapeHtml(c.summary || "") + '</p>' +
+          victimHtml +
+          locationHtml +
+          dateTimeHtml +
+          incidentMoreHtml +
+          (tagsHtml ? '<div class="detail-block"><h4>Tags</h4>' + tagsHtml + '</div>' : "") +
+          perpHtml +
+          legalHtml +
+          (sourcesHtml || sourcesMoreHtml ? '<div class="detail-block"><h4>Source links</h4>' + sourcesHtml + sourcesMoreHtml + '</div>' : "") +
+          '<p class="meta-line">' + metaBits.join(" · ") + '</p>' +
+          (hasTeamAccess() ?
+            '<div class="row-actions">' +
+              '<button type="button" class="btn-text danger" data-action="delete" data-id="' + escapeHtml(c.id) + '">Delete</button>' +
+            '</div>' : "") +
+        '</div>' +
+      '</details>'
+    );
+  }
+
+  // ---------- Form ----------
+  function addSourceRow(label, url) {
+    var row = document.createElement("div");
+    row.className = "source-row";
+    row.innerHTML =
+      '<input type="text" class="source-label" placeholder="Source name (optional, e.g. The Hindu)" value="' + escapeHtml(label) + '">' +
+      '<input type="url" class="source-url" placeholder="https://…" value="' + escapeHtml(url) + '">' +
+      '<button type="button" class="remove-source" aria-label="Remove source">✕</button>';
+    row.querySelector(".remove-source").addEventListener("click", function () { row.remove(); });
+    els.sourcesRows.appendChild(row);
+  }
+
+  function addPerpRow(p) {
+    p = p || {};
+    var row = document.createElement("div");
+    row.className = "perp-entry";
+    row.innerHTML =
+      '<div class="field-row">' +
+        '<div class="field"><label>Name</label>' +
+          '<input type="text" class="perp-name" placeholder="As given in the source" value="' + escapeHtml(p.name || "") + '"></div>' +
+        '<div class="field"><label>Gender</label>' +
+          '<select class="perp-gender">' +
+            '<option value="">Not specified</option>' +
+            '<option value="Woman">Woman</option>' +
+            '<option value="Man">Man</option>' +
+            '<option value="Other">Other</option>' +
+          '</select></div>' +
+        '<div class="field"><label>Age</label>' +
+          '<input type="text" class="perp-age" placeholder="e.g. 34" value="' + escapeHtml(p.age || "") + '"></div>' +
+      '</div>' +
+      '<div class="field-row">' +
+        '<div class="field"><label>Caste / community</label>' +
+          '<input type="text" class="perp-caste" placeholder="As named in the source" value="' + escapeHtml(p.caste || "") + '"></div>' +
+        '<div class="field"><label>Affiliation</label>' +
+          '<input type="text" class="perp-affiliation" placeholder="e.g. political party, official position" value="' + escapeHtml(p.affiliation || "") + '"></div>' +
+      '</div>' +
+      '<button type="button" class="remove-perp">✕ Remove this perpetrator</button>';
+    row.querySelector(".perp-gender").value = p.gender || "";
+    row.querySelector(".remove-perp").addEventListener("click", function () { row.remove(); });
+    els.perpsRows.appendChild(row);
+  }
+
+  function gatherPerps() {
+    var rows = els.perpsRows.querySelectorAll(".perp-entry");
+    var out = [];
+    rows.forEach(function (row) {
+      var p = {
+        name: row.querySelector(".perp-name").value.trim(),
+        gender: row.querySelector(".perp-gender").value,
+        age: row.querySelector(".perp-age").value.trim(),
+        caste: row.querySelector(".perp-caste").value.trim(),
+        affiliation: row.querySelector(".perp-affiliation").value.trim()
+      };
+      if (p.name || p.gender || p.age || p.caste || p.affiliation) out.push(p);
+    });
+    return out;
+  }
+
+  function clearFieldErrors() {
+    document.querySelectorAll(".field.invalid").forEach(function (f) {
+      f.classList.remove("invalid");
+      var err = f.querySelector(".field-error");
+      if (err) err.hidden = true;
+    });
+  }
+
+  function markInvalid(fieldId) {
+    var f = $(fieldId);
+    f.classList.add("invalid");
+    var err = f.querySelector(".field-error");
+    if (err) err.hidden = false;
+  }
+
+  function openConfirmModal() {
+    lastFocused = document.activeElement;
+    els.scrim.hidden = false;
+    els.confirmModal.hidden = false;
+    els.confirmContinueBtn.focus();
+  }
+
+  function closeConfirmModal() {
+    els.scrim.hidden = true;
+    els.confirmModal.hidden = true;
+    if (lastFocused && lastFocused.focus) lastFocused.focus();
+  }
+
+  var sourceAlertLastFocused = null;
+  function openSourceAlert() {
+    sourceAlertLastFocused = document.activeElement;
+    els.sourceAlertModal.hidden = false;
+    els.sourceAlertOkBtn.focus();
+  }
+
+  function closeSourceAlert() {
+    els.sourceAlertModal.hidden = true;
+    if (sourceAlertLastFocused && sourceAlertLastFocused.focus) sourceAlertLastFocused.focus();
+  }
+
+  function openForm(caseObj) {
+    editingId = caseObj ? caseObj.id : null;
+    clearFieldErrors();
+    hideFormBanner();
+    els.formTitle.textContent = caseObj ? "Edit case" : "New case";
+    $("f-title").value = caseObj ? caseObj.title || "" : "";
+    $("f-date").value = caseObj ? caseObj.dateOfIncident || "" : "";
+    $("f-date-bs").value = caseObj ? caseObj.dateOfIncidentBS || "" : "";
+    $("f-time").value = caseObj ? caseObj.timeOfIncident || "" : "";
+    $("f-status").value = caseObj ? caseObj.status || "Reported" : "Reported";
+    $("f-state").value = caseObj ? caseObj.state || STATES[0] : STATES[0];
+    $("f-district").value = caseObj ? caseObj.district || "" : "";
+    $("f-location-detail").value = caseObj ? caseObj.locationDetail || "" : "";
+    $("f-category").value = caseObj ? caseObj.category || CATEGORIES[0] : CATEGORIES[0];
+    $("f-summary").value = caseObj ? caseObj.summary || "" : "";
+    $("f-tags").value = caseObj && caseObj.tags ? caseObj.tags.join(", ") : "";
+    $("f-documentedby").value = caseObj ? caseObj.documentedBy || "" : "";
+
+    $("f-v-name").value = caseObj ? caseObj.victimName || "" : "";
+    $("f-v-gender").value = caseObj ? caseObj.victimGender || "" : "";
+    $("f-v-dob").value = caseObj ? caseObj.victimDob || "" : "";
+    $("f-v-dob-bs").value = caseObj ? caseObj.victimDobBS || "" : "";
+    $("f-v-caste").value = caseObj ? caseObj.victimCaste || "" : "";
+    $("f-v-dod").value = caseObj ? caseObj.victimDod || "" : "";
+    $("f-v-dod-bs").value = caseObj ? caseObj.victimDodBS || "" : "";
+    $("f-v-age-death").value = caseObj ? caseObj.victimAgeAtDeath || "" : "";
+    $("f-v-origin").value = caseObj ? caseObj.victimOrigin || "" : "";
+    $("f-v-moreinfo").value = caseObj ? caseObj.victimMoreInfo || "" : "";
+
+    $("f-p-moreinfo").value = caseObj ? caseObj.perpMoreInfo || "" : "";
+
+    $("f-l-casename").value = caseObj ? caseObj.legalCaseName || "" : "";
+    $("f-l-court").value = caseObj ? caseObj.legalCourt || "" : "";
+    $("f-l-verdict").value = caseObj ? caseObj.legalVerdict || "" : "";
+    $("f-l-moreinfo").value = caseObj ? caseObj.legalMoreInfo || "" : "";
+    $("f-i-moreinfo").value = caseObj ? caseObj.incidentMoreInfo || "" : "";
+    $("f-s-moreinfo").value = caseObj ? caseObj.sourcesMoreInfo || "" : "";
+
+    els.perpsRows.innerHTML = "";
+    var perps = caseObj && caseObj.perpetrators && caseObj.perpetrators.length ? caseObj.perpetrators :
+      (caseObj && (caseObj.perpName || caseObj.perpGender || caseObj.perpCaste || caseObj.perpAffiliation) ?
+        [{ name: caseObj.perpName, gender: caseObj.perpGender, caste: caseObj.perpCaste, affiliation: caseObj.perpAffiliation }] : []);
+    perps.forEach(function (p) { addPerpRow(p); });
+
+    els.sourcesRows.innerHTML = "";
+    var sources = caseObj && caseObj.sources && caseObj.sources.length ? caseObj.sources : [{ label: "", url: "" }];
+    sources.forEach(function (s) { addSourceRow(s.label, s.url); });
+
+    lastFocused = document.activeElement;
+    els.scrim.hidden = false;
+    els.formPanel.hidden = false;
+    $("f-title").focus();
+  }
+
+  function closeForm() {
+    els.scrim.hidden = true;
+    els.formPanel.hidden = true;
+    editingId = null;
+    if (lastFocused && lastFocused.focus) lastFocused.focus();
+  }
+
+  function gatherSources() {
+    var rows = els.sourcesRows.querySelectorAll(".source-row");
+    var out = [];
+    rows.forEach(function (row) {
+      var label = row.querySelector(".source-label").value.trim();
+      var url = row.querySelector(".source-url").value.trim();
+      if (url) out.push({ label: label, url: url });
+    });
+    return out;
+  }
+
+  async function saveCase() {
+    var title = $("f-title").value.trim();
+    var summary = $("f-summary").value.trim();
+    var sources = gatherSources();
+
+    if (sources.length === 0) {
+      openSourceAlert();
+      return;
+    }
+
+    if (!canWrite) {
+      showBanner("This view is read-only — can't save from here.");
+      return;
+    }
+
+    var tags = $("f-tags").value.split(",").map(function (t) { return t.trim(); }).filter(Boolean);
+    var now = new Date().toISOString();
+    var data = {
+      title: title,
+      dateOfIncident: $("f-date").value.trim(),
+      dateOfIncidentBS: $("f-date-bs").value.trim(),
+      timeOfIncident: $("f-time").value.trim(),
+      status: $("f-status").value,
+      state: $("f-state").value,
+      district: $("f-district").value.trim(),
+      locationDetail: $("f-location-detail").value.trim(),
+      category: $("f-category").value,
+      summary: summary,
+      sources: sources,
+      tags: tags,
+      documentedBy: $("f-documentedby").value.trim(),
+      victimName: $("f-v-name").value.trim(),
+      victimGender: $("f-v-gender").value,
+      victimDob: $("f-v-dob").value.trim(),
+      victimDobBS: $("f-v-dob-bs").value.trim(),
+      victimCaste: $("f-v-caste").value.trim(),
+      victimDod: $("f-v-dod").value.trim(),
+      victimDodBS: $("f-v-dod-bs").value.trim(),
+      victimAgeAtDeath: $("f-v-age-death").value.trim(),
+      victimOrigin: $("f-v-origin").value.trim(),
+      perpetrators: gatherPerps(),
+      legalCaseName: $("f-l-casename").value.trim(),
+      legalCourt: $("f-l-court").value.trim(),
+      legalVerdict: $("f-l-verdict").value.trim(),
+      victimMoreInfo: $("f-v-moreinfo").value.trim(),
+      incidentMoreInfo: $("f-i-moreinfo").value.trim(),
+      perpMoreInfo: $("f-p-moreinfo").value.trim(),
+      legalMoreInfo: $("f-l-moreinfo").value.trim(),
+      sourcesMoreInfo: $("f-s-moreinfo").value.trim(),
+      updatedAt: now
+    };
+
+    els.saveBtn.disabled = true;
+    els.saveBtn.textContent = "Saving…";
+    try {
+      var isNewCase = !editingId;
+      if (editingId) {
+        data.id = editingId;
+        await persistCases("update", data);
+      } else {
+        var res = await persistCases("add", data);
+        data.id = res.id;
+      }
+
+      closeForm();
+      justSavedId = data.id;
+      if (isNewCase) {
+        // A new case can save successfully but still be invisible if a
+        // search term or filter from browsing is still active. Clear
+        // those so "saved" and "visible" always match.
+        clearAllFilters();
+      }
+      await loadCases();
+    } catch (e) {
+      if (e && (e.code === "not_granted" || e.code === "not_writer")) {
+        canWrite = false;
+        showBanner("This view is read-only — can't save from here.");
+      } else if (e && e.code === "unauthorized") {
+        showBanner("That team access code isn't right (or hasn't been entered). Use \"Team access\" below the toolbar to enter it.");
+      } else {
+        showBanner("Couldn't save this case (" + (e && e.code ? e.code : "unknown error") + "). Please try again.");
+      }
+    } finally {
+      els.saveBtn.disabled = false;
+      els.saveBtn.textContent = "Save case";
+    }
+  }
+
+  async function deleteCase(id) {
+    if (!canWrite) return;
+    if (!window.confirm("Delete this case? This can't be undone.")) return;
+    try {
+      await persistCases("delete", id);
+      await loadCases();
+    } catch (e) {
+      if (e && (e.code === "not_granted" || e.code === "not_writer")) {
+        canWrite = false;
+        showBanner("This view is read-only — can't delete from here.");
+      } else if (e && e.code === "unauthorized") {
+        showBanner("That team access code isn't right (or hasn't been entered). Use \"Team access\" below the toolbar to enter it.");
+      } else {
+        showBanner("Couldn't delete this case. Please try again.");
+      }
+    }
+  }
+
+  // ---------- Export ----------
+  function csvEscape(v) {
+    var s = String(v == null ? "" : v);
+    if (/[",\n]/.test(s)) s = '"' + s.replace(/"/g, '""') + '"';
+    return s;
+  }
+
+  async function exportCsv() {
+    var filtered = sortCases(allCases.filter(matchesFilters));
+    var header = ["Date of incident (Gregorian)", "Date of incident (Nepali/BS)", "Time of incident",
+      "Province", "District", "Specific location", "Category", "Status", "Title", "Summary",
+      "Victim name", "Victim gender", "Victim DOB (Gregorian)", "Victim DOB (Nepali/BS)", "Caste / community",
+      "Date of death (Gregorian)", "Date of death (Nepali/BS)", "Age at death",
+      "Location of origin", "Victim more info",
+      "Perpetrator name", "Perpetrator gender", "Perpetrator age", "Perpetrator caste", "Perpetrator affiliation", "Perpetrator more info",
+      "Legal case name", "Court", "Verdict", "Legal more info",
+      "Incident more info", "Sources", "Sources more info", "Tags", "Documented by", "Added"];
+    var rows = filtered.map(function (c) {
+      var perps = (c.perpetrators && c.perpetrators.length) ? c.perpetrators :
+        (c.perpName || c.perpGender || c.perpCaste || c.perpAffiliation ?
+          [{ name: c.perpName, gender: c.perpGender, caste: c.perpCaste, affiliation: c.perpAffiliation }] : []);
+      return [
+        c.dateOfIncident || "", c.dateOfIncidentBS || "", c.timeOfIncident || "",
+        c.state || "", c.district || "", c.locationDetail || "", c.category || "", c.status || "",
+        c.title || "", c.summary || "",
+        c.victimName || "", c.victimGender || "", c.victimDob || "", c.victimDobBS || "", c.victimCaste || "",
+        c.victimDod || "", c.victimDodBS || "", c.victimAgeAtDeath || "", c.victimOrigin || "", c.victimMoreInfo || "",
+        perps.map(function (p) { return p.name || ""; }).join(" | "),
+        perps.map(function (p) { return p.gender || ""; }).join(" | "),
+        perps.map(function (p) { return p.age || ""; }).join(" | "),
+        perps.map(function (p) { return p.caste || ""; }).join(" | "),
+        perps.map(function (p) { return p.affiliation || ""; }).join(" | "),
+        c.perpMoreInfo || "",
+        c.legalCaseName || "", c.legalCourt || "", c.legalVerdict || "", c.legalMoreInfo || "",
+        c.incidentMoreInfo || "",
+        (c.sources || []).map(function (s) { return s.url; }).join(" | "), c.sourcesMoreInfo || "",
+        (c.tags || []).join(" | "),
+        c.documentedBy || "", c.createdAt || ""
+      ].map(csvEscape).join(",");
+    });
+    var csv = header.map(csvEscape).join(",") + "\n" + rows.join("\n");
+
+    var filename = "dont-forget-dalits-cases-" + new Date().toISOString().slice(0, 10) + ".csv";
+    try {
+      var blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+    } catch (e) {
+      showBanner("Couldn't export the file. Please try again.");
+    }
+  }
+
+  init();
+})();
+</script></body></html>
